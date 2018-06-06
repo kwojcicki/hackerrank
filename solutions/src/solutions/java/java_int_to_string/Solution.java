@@ -1,7 +1,7 @@
 package solutions.java.java_int_to_string;
 
-import java.util.*;
-import java.security.*;
+import java.security.Permission;
+import java.util.Scanner;
 public class Solution {
 	public static void main(String[] args) {
 

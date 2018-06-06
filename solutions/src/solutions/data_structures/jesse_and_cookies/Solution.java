@@ -1,9 +1,11 @@
 package solutions.data_structures.jesse_and_cookies;
-import java.io.*;
-import java.math.*;
-import java.text.*;
-import java.util.*;
-import java.util.regex.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class Solution {
 

@@ -1,7 +1,6 @@
 package solutions.java.java_loops;
 
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 
 class Solution{
     public static void main(String []argh){

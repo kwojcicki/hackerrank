@@ -1,12 +1,6 @@
 package solutions.data_structures.print_the_elements_of_a_linked_list;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class Solution {
 
