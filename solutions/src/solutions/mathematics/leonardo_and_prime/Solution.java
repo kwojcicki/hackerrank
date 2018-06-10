@@ -14,12 +14,14 @@ public class Solution {
     static int primeCount(long n) {
     	int[] prime = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
     	
-    	long total = 2;
+    	long total = 1;
     	int count = 0;
     	
-    	while(n >= total) {
-    		total *= prime[count + 1];
-    		count++;
+    	for(int i = 0; i < prime.length; i++) {
+    		total *= prime[i];
+    		if(total <= n) {
+        		count++;	
+    		}
     	}
     	
     	return count;
