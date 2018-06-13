@@ -6,24 +6,17 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Solution {
-	
+
     /*
-     * Complete the primeCount function below.
+     * Complete the connectingTowns function below.
      */
-    static int primeCount(long n) {
-    	int[] prime = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
-    	
-    	long total = 1;
-    	int count = 0;
-    	
-    	for(int i = 0; i < prime.length; i++) {
-    		total *= prime[i];
-    		if(total <= n) {
-        		count++;	
-    		}
+    static int connectingTowns(int n, int[] routes) {
+    	int total = 1;
+    	for(int i: routes) {
+    		total = (total * i) % 1234567;
     	}
     	
-    	return count;
+    	return total;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -31,12 +24,21 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int q = Integer.parseInt(scanner.nextLine().trim());
+        int t = Integer.parseInt(scanner.nextLine().trim());
 
-        for (int qItr = 0; qItr < q; qItr++) {
-            long n = Long.parseLong(scanner.nextLine().trim());
+        for (int tItr = 0; tItr < t; tItr++) {
+            int n = Integer.parseInt(scanner.nextLine().trim());
 
-            int result = primeCount(n);
+            int[] routes = new int[n-1];
+
+            String[] routesItems = scanner.nextLine().split(" ");
+
+            for (int routesItr = 0; routesItr < n-1; routesItr++) {
+                int routesItem = Integer.parseInt(routesItems[routesItr].trim());
+                routes[routesItr] = routesItem;
+            }
+
+            int result = connectingTowns(n, routes);
 
             bufferedWriter.write(String.valueOf(result));
             bufferedWriter.newLine();
