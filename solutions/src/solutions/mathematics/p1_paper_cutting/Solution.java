@@ -3,20 +3,16 @@ package solutions.mathematics.p1_paper_cutting;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Solution {
 
-    /*
-     * Complete the connectingTowns function below.
-     */
-    static int connectingTowns(int n, int[] routes) {
-    	int total = 1;
-    	for(int i: routes) {
-    		total = (total * i) % 1234567;
-    	}
-    	
-    	return total;
+    // Complete the solve function below.
+    static long solve(int n, int m) {
+    	BigInteger n1 = BigInteger.valueOf(n);
+    	BigInteger m1 = BigInteger.valueOf(m);
+    	return n1.multiply(m1).subtract(BigInteger.ONE).longValue();
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -24,26 +20,19 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int t = Integer.parseInt(scanner.nextLine().trim());
+        String[] nm = scanner.nextLine().split(" ");
 
-        for (int tItr = 0; tItr < t; tItr++) {
-            int n = Integer.parseInt(scanner.nextLine().trim());
+        int n = Integer.parseInt(nm[0]);
 
-            int[] routes = new int[n-1];
+        int m = Integer.parseInt(nm[1]);
 
-            String[] routesItems = scanner.nextLine().split(" ");
+        long result = solve(n, m);
 
-            for (int routesItr = 0; routesItr < n-1; routesItr++) {
-                int routesItem = Integer.parseInt(routesItems[routesItr].trim());
-                routes[routesItr] = routesItem;
-            }
-
-            int result = connectingTowns(n, routes);
-
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
-        }
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
 
         bufferedWriter.close();
+
+        scanner.close();
     }
 }
