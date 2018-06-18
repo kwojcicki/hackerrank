@@ -8,15 +8,13 @@ import java.util.Scanner;
 public class Solution {
 
     /*
-     * Complete the connectingTowns function below.
+     * Complete the movingTiles function below.
      */
-    static int connectingTowns(int n, int[] routes) {
-    	int total = 1;
-    	for(int i: routes) {
-    		total = (total * i) % 1234567;
-    	}
-    	
-    	return total;
+    static double[] movingTiles(int l, int s1, int s2, int[] queries) {
+        /*
+         * Write your code here.
+         */
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -24,26 +22,40 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int t = Integer.parseInt(scanner.nextLine().trim());
+        String[] lS1S2 = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
 
-        for (int tItr = 0; tItr < t; tItr++) {
-            int n = Integer.parseInt(scanner.nextLine().trim());
+        int l = Integer.parseInt(lS1S2[0]);
 
-            int[] routes = new int[n-1];
+        int s1 = Integer.parseInt(lS1S2[1]);
 
-            String[] routesItems = scanner.nextLine().split(" ");
+        int s2 = Integer.parseInt(lS1S2[2]);
 
-            for (int routesItr = 0; routesItr < n-1; routesItr++) {
-                int routesItem = Integer.parseInt(routesItems[routesItr].trim());
-                routes[routesItr] = routesItem;
-            }
+        int queriesCount = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
 
-            int result = connectingTowns(n, routes);
+        int[] queries = new int[queriesCount];
 
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
+        for (int queriesItr = 0; queriesItr < queriesCount; queriesItr++) {
+            int queriesItem = scanner.nextInt();
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+            queries[queriesItr] = queriesItem;
         }
 
+        double[] result = movingTiles(l, s1, s2, queries);
+
+        for (int resultItr = 0; resultItr < result.length; resultItr++) {
+            bufferedWriter.write(String.valueOf(result[resultItr]));
+
+            if (resultItr != result.length - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
         bufferedWriter.close();
+
+        scanner.close();
     }
 }
