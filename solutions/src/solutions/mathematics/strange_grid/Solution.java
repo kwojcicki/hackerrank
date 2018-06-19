@@ -11,12 +11,9 @@ public class Solution {
      * Complete the strangeGrid function below.
      */
     static int strangeGrid(int a, int b) {
-        /*
-         * Write your code here.
-         */
     	long r = a;
     	long c = b;
-    	long ans = (r%2==1 ? (r-1)*5+(c-1)*2:(r-2)*5+1+(c-1)*2);
+
     	return (int)ans;
 
     }
