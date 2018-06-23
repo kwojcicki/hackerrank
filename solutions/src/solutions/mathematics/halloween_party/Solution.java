@@ -11,12 +11,10 @@ public class Solution {
      * Complete the halloweenParty function below.
      */
     static long halloweenParty(int k) {
-        /*
-         * Write your code here.
-         */
-
+        return int(Math.pow(k, 2) / 4);
     }
 
+    
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
