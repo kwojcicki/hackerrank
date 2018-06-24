@@ -11,7 +11,7 @@ public class Solution {
      * Complete the halloweenParty function below.
      */
     static long halloweenParty(int k) {
-        return int(Math.pow(k, 2) / 4);
+        return (long)(Math.pow(k, 2) / 4);
     }
 
     
