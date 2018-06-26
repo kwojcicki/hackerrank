@@ -9,8 +9,16 @@ public class Solution {
 
     // Complete the solve function below.
     static int solve(int n, int[][] operations) {
-
-
+    	long total = 0;
+    	long k = n;
+    	for(int i = 0; i < operations.length; i++) {
+    		long a = (long) operations[i][1];
+    		long b = (long) operations[i][0];
+    		long candies = (long) operations[i][2];
+    		total = total + (a - b + 1) * candies;
+    	}
+    	
+    	return (int)(total / k);
     }
 
     private static final Scanner scanner = new Scanner(System.in);
