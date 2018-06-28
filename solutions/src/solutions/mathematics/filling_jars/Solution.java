@@ -10,8 +10,8 @@ public class Solution {
 		long M = sc.nextInt();
 		long N = sc.nextInt();
 
-		long sum=0;
-		for(int i=0;i<N;i++) {
+		long sum = 0;
+		for(int i = 0;i < N;i++) {
 			long a = sc.nextLong();
 			long b = sc.nextLong();
 			long k = sc.nextLong();
