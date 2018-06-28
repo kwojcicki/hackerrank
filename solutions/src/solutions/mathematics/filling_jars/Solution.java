@@ -1,7 +1,5 @@
 package solutions.mathematics.filling_jars;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,14 +11,14 @@ public class Solution {
 		long N = sc.nextInt();
 
 		long sum=0;
-		for(int i=0;i<N;i++)
-		{
+		for(int i=0;i<N;i++) {
 			long a = sc.nextLong();
 			long b = sc.nextLong();
 			long k = sc.nextLong();
-			sum+=(b-a+1)*k;
+			sum += (b - a + 1) * k;
 		}
 
 		System.out.println(sum/M);
+		sc.close();
 	}
 }
