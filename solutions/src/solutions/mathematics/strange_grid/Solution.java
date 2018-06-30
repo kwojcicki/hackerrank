@@ -14,8 +14,7 @@ public class Solution {
     	long r = a;
     	long c = b;
 
-    	return (int)ans;
-
+    	return (int)(r * c);
     }
 
     private static final Scanner scanner = new Scanner(System.in);
